@@ -11,7 +11,7 @@ h1 {
 }
 
 body {
-  background-image: url(Jakub.jpg);
+  background-image: url(background_image.jpg);
   background-color: #cccccc;
   background-repeat: no repeat;
   background-position: center center;
@@ -23,8 +23,6 @@ body {
   padding-left: 0px;
   width: 100%;
 }
-
-/* Creat a Parallax Effect */
 
 p {
   font-size: 14px;
@@ -96,7 +94,6 @@ ol {
 }
 
 li {
-  display: block;
   color: black;
   padding: 10px;
 }
@@ -104,6 +101,6 @@ li {
 footer {
   width: 100%
   font-size: 10px;
-  color: black;
+  color: blue;
   padding: 7px 0px 0px 20px;
 }
