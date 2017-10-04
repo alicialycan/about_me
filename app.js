@@ -83,33 +83,36 @@ function questionFive(){
   }
 }
 questionFive();
-//Question 6
-var attempts = 4;
-var answer6 = prompt('How many foreign countries have I travelled too? Please enter the numerical value. You will have 4 attempts.');
-while (attempts > 1) {
-  if (answer6 < 5) {
-    attempts = attempts - 1;
-    answer6 = prompt('That is too low! Try again. \nHow many foreign countries have I travelled too?\nYou have ' + attempts + ' attempt(s) left.');
-    console.log('The user guessed ' + answer6 + ' and has ' + attempts + ' attempts left');
-  } else if (answer6 > 5) {
-    attempts--;
-    answer6 = prompt('That is too high! Try again.\nHow many foreign countries have I travelled too?\nYou have ' + attempts + ' attempt(s) left.');
-    console.log('The user guessed ' + answer6 + ' and has ' + attempts + ' attempts left');
-  } else if (answer6 === 5) {
-    userPoints++;
-    alert('That is correct! Alicia has travelled to 5 foreign countries!\nYou now have ' + userPoints + ' point(s)');
-    console.log('After question 6, the user has ' + userPoints + ' point(s).');
-  } else {
-    attempts--;
-    answer6 = prompt('Please guess a whole number.');
-    console.log('After question 6, the user has ' + userPoints + ' point(s).');
+
+//Question
+function questionSix(){
+  var attempts = 4;
+  var answer6 = prompt('How many foreign countries have I travelled too? Please enter the numerical value. You will have 4 attempts.');
+  while (attempts > 1) {
+    if (answer6 < 5) {
+      attempts = attempts - 1;
+      answer6 = prompt('That is too low! Try again. \nHow many foreign countries have I travelled too?\nYou have ' + attempts + ' attempt(s) left.');
+      console.log('The user guessed ' + answer6 + ' and has ' + attempts + ' attempts left');
+    } else if (answer6 > 5) {
+      attempts--;
+      answer6 = prompt('That is too high! Try again.\nHow many foreign countries have I travelled too?\nYou have ' + attempts + ' attempt(s) left.');
+      console.log('The user guessed ' + answer6 + ' and has ' + attempts + ' attempts left');
+    } else if (answer6 === 5) {
+      userPoints++;
+      alert('That is correct! Alicia has travelled to 5 foreign countries!\nYou now have ' + userPoints + ' point(s)');
+      console.log('After question 6, the user has ' + userPoints + ' point(s).');
+    } else {
+      attempts--;
+      answer6 = prompt('Please guess a whole number.');
+      console.log('After question 6, the user has ' + userPoints + ' point(s).');
+    }
+  }
+  if (attempts = 1) {
+    alert('Sorry! You ran out of attempts.');
+    console.log('You\'re final score is ' + userPoints + ' point(s).');
   }
 }
-if (attempts = 1) {
-  alert('Sorry! You ran out of attempts.');
-  console.log('You\'re final score is ' + userPoints + ' point(s).');
-}
-
+questionSix();
 //Question 7
 // var favoriteHolidays = ['christmas' , 'thanksgiving' , 'halloween' , 'easter' , 'new years'];
 // var arrayLength = favoriteHolidays.length; // Item in array
