@@ -37,6 +37,7 @@ function questionTwo(){
     console.log('After question 3, the user has ' + userPoints + ' point(s)');
   }
 }
+questionTwo();
 
 //Question3
 function questionThree(){
