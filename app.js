@@ -68,18 +68,21 @@ function questionFour(){
   }
 }
 questionFour();
+
 //Question 5
-var answer5 = prompt('Is cookie dough my favorite flavor of ice cream? Type yes or no.').toLowerCase();
-console.log('the user answered: ' + answer5);
+function questionFive(){
+  var answer5 = prompt('Is cookie dough my favorite flavor of ice cream? Type yes or no.').toLowerCase();
+  console.log('the user answered: ' + answer5);
 
-if (answer5 === 'yes' || answer5 === 'Y') {
-  userPoints++;
-  alert('That\'s correct! Time. I love chocolate chip cookie dough! You now have ' + userPoints + ' point(s).');
-} else {
-  alert('Wrong ' + user + '. I like many flavors of ice cream, but am a huge fan of cookie dough. Yum! You now have ' + userPoints + ' point(s).');
-  console.log('After question 5, the user has ' + userPoints + ' point(s).');
+  if (answer5 === 'yes' || answer5 === 'Y') {
+    userPoints++;
+    alert('That\'s correct! Time. I love chocolate chip cookie dough! You now have ' + userPoints + ' point(s).');
+  } else {
+    alert('Wrong ' + user + '. I like many flavors of ice cream, but am a huge fan of cookie dough. Yum! You now have ' + userPoints + ' point(s).');
+    console.log('After question 5, the user has ' + userPoints + ' point(s).');
+  }
 }
-
+questionFive();
 //Question 6
 var attempts = 4;
 var answer6 = prompt('How many foreign countries have I travelled too? Please enter the numerical value. You will have 4 attempts.');
