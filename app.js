@@ -55,17 +55,19 @@ function questionThree(){
 questionThree();
 
 //Question 4
-var answer4 = prompt('Do I like cats more than dogs? Type yes or no.').toUpperCase();
-console.log(answer4);
+function questionFour(){
+  var answer4 = prompt('Do I like cats more than dogs? Type yes or no.').toUpperCase();
+  console.log(answer4);
 
-if (answer4 === 'NO' || answer4 === 'N') {
-  userPoints++;
-  alert('That\'s right! I love dogs; in fact, I\'ve been told I have the personality of a golden retriever. You now have ' + userPoints + ' point(s).');
-} else {
-  alert('Wrong ' + user + '! Although if it was the right cat, I might change my mind.');
-  console.log('After question 4, the user has ' + userPoints + ' points.');
+  if (answer4 === 'NO' || answer4 === 'N') {
+    userPoints++;
+    alert('That\'s right! I love dogs; in fact, I\'ve been told I have the personality of a golden retriever. You now have ' + userPoints + ' point(s).');
+  } else {
+    alert('Wrong ' + user + '! Although if it was the right cat, I might change my mind.');
+    console.log('After question 4, the user has ' + userPoints + ' points.');
+  }
 }
-
+questionFour();
 //Question 5
 var answer5 = prompt('Is cookie dough my favorite flavor of ice cream? Type yes or no.').toLowerCase();
 console.log('the user answered: ' + answer5);
