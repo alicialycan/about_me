@@ -113,7 +113,9 @@ function questionSix(){
   }
 }
 questionSix();
+
 //Question 7
+//function questionSeven(){
 // var favoriteHolidays = ['christmas' , 'thanksgiving' , 'halloween' , 'easter' , 'new years'];
 // var arrayLength = favoriteHolidays.length; // Item in array
 // var attemptsHolidays = 5;
@@ -142,6 +144,8 @@ questionSix();
 //   alert('My favorite holidays are:\n' + favoriteHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
 //   console.log('After question 7 the user has ' + userPoints + ' point(s).');
 // }
+//}
+//questionSeven();
 
 /*Conclusion
 if (userPoints === 7) {
