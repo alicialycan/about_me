@@ -52,6 +52,8 @@ function questionThree(){
     console.log('After question 3, the user has ' + userPoints + ' point(s).');
   }
 }
+questionThree();
+
 //Question 4
 var answer4 = prompt('Do I like cats more than dogs? Type yes or no.').toUpperCase();
 console.log(answer4);
