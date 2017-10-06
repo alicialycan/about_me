@@ -98,32 +98,30 @@ if (attempts = 1) {
 
 //Question 7
 var favoriteHolidays = ['christmas' , 'thanksgiving' , 'halloween' , 'easter' , 'new years'];
-var arrayLength = favoriteHolidays.length; // Item in array
+var myHolidays = favoriteHolidays.join ('\n');
+var flag = false;
 var attemptsHolidays = 5;
-
 var answer7 = prompt('Can you guess one of my favorite holidays?').toLowerCase();
 console.log('question7');
 
-while  (attemptsHolidays > 0) {
+while (!flag && attemptsHolidays > 0) {
   for (var counter = 0; counter < favoriteHolidays.length; counter++) {
     if (answer7 === favoriteHolidays[counter]) {
-      alert('You got one right!');
-      console.log('The user got question 7 right.')
-      userPoints++;
+      flag = true;
+    }
   }
-}
-if (answer7 === ) {
-  userPoints++;
+if (flag === true) {
+    userPoints++;
     alert('That is correct! ' + answer7 + ' is on my list of favorite holidays!');
     console.log('The user guessed ' + answer7 + ' and has ' + (attemptsHolidays) + ' attempt(s) left.');
   } else {
-  attemptsHolidays--;
+    attemptsHolidays--;
     answer7 = prompt('Wrong answer, ' + answer7 + ' is not on my list of favorite holidays.\nYou have ' + attemptsHolidays + '  attempts left.');
     console.log('The user guessed ' + answer7 + ' and has ' + (attemptsHolidays) + ' attempt(s) left.');
   }
   alert('My favorite holidays are:\n' + favoriteHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
   console.log('After question 7 the user has ' + userPoints + ' point(s).');
-}
+
 
 /*Conclusion
 if (userPoints === 7) {
