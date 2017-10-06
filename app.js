@@ -9,81 +9,58 @@ var user = prompt('What is your name?');
 alert('Hi ' + user + '! I am so glad you want to play my game. Please answer the following 7 questions:');
 console.log('User name is ' + user + '.');
 
-//Question 1
-function questionOne(){
-  var answer1 = prompt('Do I have a passion for web development? Type yes or no.').toLowerCase();
-  console.log('The user answered: ' + answer1);
+var myQuestions = [
+  'Do I have a passion for web development? Type yes or no.',
+  'Am I an entrepeneur? Type yes or no.',
+  'Do I speak a foreign language? Type yes or no.',
+  'Do I like cats more than dogs? Type yes or no.',
+  'Is cookie dough my favorite flavor of ice cream? Type yes or no.'
+];
+var correctAnswers = [
+  'I do! I love digging into code to make things look and work right.',
+  'You\'re right! I love having something I can put energy into and that I\'m passionate about!',
+  'Woohoo you guessed right! I speak spanish and love speaking it as much as possible when I travel. Again, I like a challenge!',
+  'That\'s right! I love dogs; in fact, I\'ve been told I have the personality of a golden retriever.',
+  'That\'s correct! Time. I love chocolate chip cookie dough!'
+];
+var wrongAnswers = [
+  'Wrong, ' + user + '. I am super passionate about my business!',
+  'Wrong ' + user + '! Although if it was the right cat, I might change my mind.',
+  'Wrong again ' + user + '! Language and culture is another big passion of mine.',
+  'Wrong ' + user + '. I like many flavors of ice cream, but am a huge fan of cookie dough. Yum!'
+];
+var myResponses = ['yes', 'y', 'no', 'n'];
+var pointsText = ' point(s)!';
+var youNowHave = 'You now have ';
+var userAnswered = 'The user answered: ';
+var afterQuestion = 'After question ';
+var index = 1;
+var theUserHas = ', the user has ';
 
-  if (answer1 === 'yes' || answer1 === 'Y') {
-    userPoints++;
-    alert('I do! I love digging into code to make things look and work right. You now have ' + userPoints + ' point(s).');
-  } else {
-    alert('Wrong! I am super passionate about building multi-functional websites utilizing video and graphics. You now have ' + userPoints + ' point(s).');
-    console.log('The user has ' + userPoints + ' point(s)');
+function runAllQuestions(){
+  for(var i = 0; i < 5; i++) {
+    var answer = prompt(myQuestions[i]).toLowerCase();
+    console.log(userAnswered + answer);
+    if (i == 1 || i == 2){
+      if(answer === myResponses[2] || answer === myResponses[3]){
+        userPoints++;
+        alert(correctAnswers[i] + youNowHave + userPoints + pointsText);
+      }else {
+        alert(wrongAnswers[i] + youNowHave + userPoints + pointsText);
+      }
+    }
+    else {
+      if (answer === myResponses[0] || answer === myResponses[1]){
+        userPoints++;
+        alert(correctAnswers[i] + youNowHave + userPoints + pointsText);
+      }else {
+        alert(wrongAnswers[i] + youNowHave + userPoints + pointsText);
+      }
+      console.log(afterQuestion + index + theUserHas + userPoints + pointsText);
+    }
   }
 }
-questionOne();
-
-//Question 2
-function questionTwo(){
-  var answer2 = prompt('Am I an entrepeneur? Type yes or no.').toUpperCase();
-  console.log('The user answered: ' + answer2);
-
-  if (answer2 === 'YES' || answer2 === 'Y') {
-    userPoints++;
-    alert ('You\'re right! I love having something I can put energy into and that I\'m passionate about! You now have ' + userPoints + ' point(s).');
-  } else {
-    alert ('Wrong, ' + user + '. I am super passionate about my business! You now have ' + userPoints + ' pont(s).');
-    console.log('After question 3, the user has ' + userPoints + ' point(s)');
-  }
-}
-questionTwo();
-
-//Question3
-function questionThree(){
-  var answer3 = prompt('Do I speak a foreign language? Type yes or no.').toLowerCase();
-  console.log('The user answered: ' + answer3);
-
-  if (answer3 === 'yes' || answer3 === 'Y') {
-    userPoints++;
-    alert('Woohoo you guessed right! I speak spanish and love speaking it as much as possible when I travel. Again, I like a challenge! You now have ' + userPoints + ' point(s)');
-  } else {
-    alert('Wrong again ' + user + '! Language and culture is another big passion of mine. You now have ' + userPoints + ' point(s).');
-    console.log('After question 3, the user has ' + userPoints + ' point(s).');
-  }
-}
-questionThree();
-
-//Question 4
-function questionFour(){
-  var answer4 = prompt('Do I like cats more than dogs? Type yes or no.').toUpperCase();
-  console.log(answer4);
-
-  if (answer4 === 'NO' || answer4 === 'N') {
-    userPoints++;
-    alert('That\'s right! I love dogs; in fact, I\'ve been told I have the personality of a golden retriever. You now have ' + userPoints + ' point(s).');
-  } else {
-    alert('Wrong ' + user + '! Although if it was the right cat, I might change my mind.');
-    console.log('After question 4, the user has ' + userPoints + ' points.');
-  }
-}
-questionFour();
-
-//Question 5
-function questionFive(){
-  var answer5 = prompt('Is cookie dough my favorite flavor of ice cream? Type yes or no.').toLowerCase();
-  console.log('the user answered: ' + answer5);
-
-  if (answer5 === 'yes' || answer5 === 'Y') {
-    userPoints++;
-    alert('That\'s correct! Time. I love chocolate chip cookie dough! You now have ' + userPoints + ' point(s).');
-  } else {
-    alert('Wrong ' + user + '. I like many flavors of ice cream, but am a huge fan of cookie dough. Yum! You now have ' + userPoints + ' point(s).');
-    console.log('After question 5, the user has ' + userPoints + ' point(s).');
-  }
-}
-questionFive();
-
+runAllQuestions();
 //Question
 function questionSix(){
   var attempts = 4;
@@ -117,7 +94,7 @@ questionSix();
 //Question 7
 function questionSeven(){
   var favoriteHolidays = ['christmas' , 'thanksgiving' , 'halloween' , 'easter' , 'new years'];
-  var myHolidays = favoriteHolidays.join ('\n');
+  var myHolidays = favoriteHolidays.join (' ');
   var flag = false;
   var attemptsHolidays = 5;
   var answer7 = prompt('Can you guess one of my favorite holidays?').toLowerCase();
@@ -138,7 +115,7 @@ function questionSeven(){
       answer7 = prompt('Wrong answer, ' + answer7 + ' is not on my list of favorite holidays.\nYou have ' + attemptsHolidays + '  attempts left.');
       console.log('The user guessed ' + answer7 + ' and has ' + (attemptsHolidays) + ' attempt(s) left.');
     }
-    alert('My favorite holidays are:\n' + favoriteHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
+    alert('My favorite holidays are:\n' + myHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
     console.log('After question 7 the user has ' + userPoints + ' point(s).');
   }
 }
