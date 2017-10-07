@@ -24,9 +24,10 @@ var correctAnswers = [
   'That\'s correct! Time. I love chocolate chip cookie dough!'
 ];
 var wrongAnswers = [
+  'Wrong! I am super passionate about building multi-functional websites utilizing video and graphics.',
   'Wrong, ' + user + '. I am super passionate about my business!',
-  'Wrong ' + user + '! Although if it was the right cat, I might change my mind.',
   'Wrong again ' + user + '! Language and culture is another big passion of mine.',
+  'Wrong ' + user + '! Although if it was the right cat, I might change my mind.',
   'Wrong ' + user + '. I like many flavors of ice cream, but am a huge fan of cookie dough. Yum!'
 ];
 var myResponses = ['yes', 'y', 'no', 'n'];
@@ -34,34 +35,27 @@ var pointsText = ' point(s)!';
 var youNowHave = 'You now have ';
 var userAnswered = 'The user answered: ';
 var afterQuestion = 'After question ';
-var index = 1;
 var theUserHas = ', the user has ';
+var userNoResponse = 'You didn\'t give a yes or no answer. Please try again.';
 
 function runAllQuestions(){
-  for(var i = 0; i < 5; i++) {
+  for(var i = 0; i < 5; i++){
     var answer = prompt(myQuestions[i]).toLowerCase();
     console.log(userAnswered + answer);
-    if (i == 1 || i == 2){
-      if(answer === myResponses[2] || answer === myResponses[3]){
-        userPoints++;
-        alert(correctAnswers[i] + youNowHave + userPoints + pointsText);
-      }else {
-        alert(wrongAnswers[i] + youNowHave + userPoints + pointsText);
-      }
+    if (answer === myResponses[0] || answer === myResponses[1]){//checks if answer is yes
+      alert(correctAnswers[i] + youNowHave + userPoints + pointsText);
+      userPoints++;
     }
-    else {
-      if (answer === myResponses[0] || answer === myResponses[1]){
-        userPoints++;
-        alert(correctAnswers[i] + youNowHave + userPoints + pointsText);
-      }else {
-        alert(wrongAnswers[i] + youNowHave + userPoints + pointsText);
-      }
-      console.log(afterQuestion + index + theUserHas + userPoints + pointsText);
+    else if (answer === myResponses[2] || answer === myResponses[3]){//checks if answer is no
+      alert(wrongAnswers[i] + youNowHave + userPoints + pointsText);
+    } else {
+      alert(userNoResponse + answer);
     }
   }
 }
 runAllQuestions();
-//Question
+
+//Question 6
 function questionSix(){
   var attempts = 4;
   var answer6 = prompt('How many foreign countries have I travelled too? Please enter the numerical value. You will have 4 attempts.');
@@ -86,8 +80,8 @@ function questionSix(){
   }
   if (attempts = 1) {
     alert('Sorry! You ran out of attempts.');
-    console.log('You\'re final score is ' + userPoints + ' point(s).');
   }
+  console.log(afterQuestion + theUserHas + userPoints + pointsText);
 }
 questionSix();
 
@@ -96,9 +90,9 @@ function questionSeven(){
   var favoriteHolidays = ['christmas' , 'thanksgiving' , 'halloween' , 'easter' , 'new years'];
   var myHolidays = favoriteHolidays.join (' ');
   var flag = false;
-  var attemptsHolidays = 5;
+  var attemptsHolidays = 6;
   var answer7 = prompt('Can you guess one of my favorite holidays?').toLowerCase();
-  console.log('question7');
+  console.log('The user entered: ' + answer7);
 
   while (!flag && attemptsHolidays > 0) {
     for (var counter = 0; counter < favoriteHolidays.length; counter++) {
@@ -115,8 +109,8 @@ function questionSeven(){
       answer7 = prompt('Wrong answer, ' + answer7 + ' is not on my list of favorite holidays.\nYou have ' + attemptsHolidays + '  attempts left.');
       console.log('The user guessed ' + answer7 + ' and has ' + (attemptsHolidays) + ' attempt(s) left.');
     }
-    alert('My favorite holidays are:\n' + myHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
-    console.log('After question 7 the user has ' + userPoints + ' point(s).');
   }
+  console.log('After question 7 the user has ' + userPoints + ' point(s).');
+  alert('My favorite holidays are:\n' + myHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
 }
 questionSeven();
