@@ -11,7 +11,7 @@ h1 {
 }
 
 body {
-  background-image: url(Jakub.jpg);
+  background-image: url(background_image.jpg);
   background-color: #cccccc;
   background-repeat: no repeat;
   background-position: center center;
@@ -96,7 +96,6 @@ ol {
 }
 
 li {
-  display: block;
   color: black;
   padding: 10px;
 }
