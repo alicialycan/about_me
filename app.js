@@ -105,5 +105,6 @@ function askQuestion(questions, answers, input, user, userPoints){
     alert('My favorite holidays are:\n' + myHolidays + '\n' + user + ' , you scored ' + userPoints + ' out of 7 points.');
   }
   questionSeven();
+
 }
 askQuestion(questions, answers, input, user, userPoints);
